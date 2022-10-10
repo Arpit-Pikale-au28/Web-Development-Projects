@@ -1,0 +1,76 @@
+body {
+    font-family: sans-serif;
+  }
+  
+  #leftcontainer {
+    border: 2px solid #CFD2CF;
+    width: 500px;
+    height: auto;
+    min-height: 580px;
+    float: left;
+    margin: 15px;
+    margin-left: 70px;
+    border-radius: 8px;
+  }
+   
+  #rightcontainer {
+    border: 2px solid #CFD2CF;
+    width: 500px;
+    height: auto;
+    min-height: 580px;
+    float: right;
+    margin: 15px;
+    margin-right: 250px;
+    border-radius: 8px;
+  }
+  
+  input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    
+  }
+
+ form {
+    margin-left: 40px;
+ }
+
+ 
+#forgetpass {
+    margin-left: 130px;
+}
+
+#loginbtn, #signupbtn {
+    margin-left: 140px;
+    width: 110px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: #5800FF;
+    color: white;
+}
+
+h2 {
+    color: #5800FF;
+    padding-top: 15px;
+    background-color: #dfdfd6;
+    height: 67px;
+}
+
+img {
+  height: 85px;
+}
+
+.options {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.options button {
+  border: 1px solid #F5EDDC;
+  border-radius: 13px;
+}
+
+.options button:focus {
+  outline: blue auto 5px; 
+}

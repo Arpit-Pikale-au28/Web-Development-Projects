@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <h2>Dashboard</h2>
+        </div> <br>
+        <div class="left">
+            <ul> <br>
+                <li>Profile</li> <br>
+                <li>Mydashboard</li> <br>
+                <li>My Reports</li> <br>
+                <li>change password</li> <br>
+                <li>Support centre</li> <br>
+                <li>About</li>
+            </ul>
+        </div>
+        <div class="right">
+            <h2>Welcome {{fname}}</h2> <br>
+            <div class="profile">
+                <h3>Your Profile</h3><br>
+                <p>Name : {{name}}</p>
+                <p>email: {{email}}</p>
+            </div>
+              
+        </div>
+    </div>
+    <style>
+        .navbar {
+            height: 50px;
+            background-color: aqua;
+            color: darkmagenta;
+            border: 1px solid slategray;
+        }
+       .left {
+        width: 241px;
+        min-height: 627px;
+        background-color: cadetblue;
+        float: left;
+       }
+       .profile {
+         height: 500px;
+         background-color: rgb(221, 133, 174);
+         border: 1px solid black;
+         float:right;
+         margin-right: 667px;
+         width: 580px;
+       }
+       .profile h3,p {
+        margin-left: 50px;
+       }
+
+    </style>
+</body>
+</html>
