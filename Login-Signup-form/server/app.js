@@ -1,10 +1,10 @@
-const express = require('express');
+const {engine} = require('express-handlebars')
 const {MongoClient} = require('mongodb')
 const path = require('path')
-const {engine} = require('express-handlebars')
-
+const express = require('express');
+require('dotenv').config();
 const app = express()
-const url = 'mongodb+srv://arpitpikale:Arpit%40123@cluster0.p7qqt.mongodb.net/?retryWrites=true&w=majority';
+const url = process.env.MONGO_URL
 const client = new MongoClient(url);
 var collection = null
 
