@@ -1,0 +1,65 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+#logo {
+  height: 80px;
+  width: 80px;
+  z-index: 1;
+  margin-top: 8px;
+}
+h2 {
+  margin-top: 33px;
+  margin-left: 10px;
+  font-family: "Permanent Marker", cursive;
+}
+
+.header {
+  display: flex;
+  background-color: #fdaf75;
+  height: 100px;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.item img {
+  height: 100px;
+  width: 100px;
+  margin-left: 40px;
+}
+
+.item {
+  height: auto;
+  width: 200px;
+  background-color: white;
+  border: 1px solid black;
+  margin: 14px;
+}
+
+.item button {
+  background-color: #ecb390;
+  margin: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 40px;
+  margin-left: 25px;
+  width: 150px;
+}
+
+.item p,
+h3 {
+  margin-left: 24px;
+}
+
+.content {
+  height: auto;
+  width: 90%;
+  background-color: #1f4690;
+  margin-left: 70px;
+  margin-right: 60px;
+  border: 2px solid black;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
