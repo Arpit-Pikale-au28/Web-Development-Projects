@@ -2,28 +2,30 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 export default function App() {
-  const [movies, setMovies] = useState([]);
+  var Gpayload = null;
   const [search, setSearch] = useState("")
+  const [movies, setMovies] = useState([]);
 
     async function getMovies() {
       const response = await fetch('http://localhost:3001/api/movies');
       const payload = await response.json();
       setMovies(payload)
     }
+
     useEffect(() => {
       getMovies();
     }, []);
 
-   const getSearchMovie = async()=> {
+    async function getSearchMovie() {
       const response = await fetch(`http://localhost:3001/api/movies/${search}`);
       const payload = await response.json();
-      console.log(payload)
-   }
+      console.log(payload);
+    }
 
     const renderList = ()=> {
         return (
           <>
-          <input type="text" placeholder='Enter Movie Id to Search' name="name" onChange={(e)=> setSearch(e.target.value)} />
+          <input type="text" placeholder='Enter Movie Id to Search' value={search} name="name" onChange={(e)=> {setSearch(e.target.value)}} />
           <button onClick={getSearchMovie}>Search</button>
           <table>
             <tr>

@@ -27,16 +27,19 @@ export const CallAPI = () => {
               <th>Login</th>
               <th>Click Here to See Profile</th>
             </tr>
-            {data.map((item) => {
+            {data.map((item) => { 
                 return (
-                  <tr>
+                <tr>
                   <td>{item.id}</td>
                   <td>{item.login}</td>
                   <td><button type="button"className="btn btn-primary"><a href={item.html_url} target="_blank" rel="noreferrer" className='text-white text-decoration-none '>View Profile</a></button></td>
-                </tr> 
+                  
+                </tr>
                 )
               })
+             
             }
+            
           </table>
           </>
         )
