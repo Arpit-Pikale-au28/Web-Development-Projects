@@ -1,9 +1,10 @@
 import React , {useState, useEffect}from 'react'
 import {Navbar} from './Navbar.js'
 import "./App.css"
+import Searchfrom from './Searchfrom.js'
 
 
-export const App = () => {
+export const Flightapi = () => {
     const [data, setData] = useState([])
     async function getData() {
         const response = await fetch('http://localhost:8000')
@@ -19,8 +20,8 @@ export const App = () => {
         const {id, name, price, originCity, destinationCity, departureDate, departureTime} = flight;
         return (
                 <div id='flights' key={id}>
-                     <h3>{name}</h3>
-                     <p> Rs. {price.toFixed(2)} </p>
+                     <h3>Price &#x20b9; {price.toFixed(2)}</h3>
+                     <p>  </p>
                      <p>origin {originCity}</p>
                      <p>destination {destinationCity}</p>
                      <p>departureDate{departureDate}</p>
@@ -32,6 +33,7 @@ export const App = () => {
     return (
         <>
         <Navbar/>
+        <Searchfrom/>
         <div className='main'>
         <>{renderData}</>
         </div>
