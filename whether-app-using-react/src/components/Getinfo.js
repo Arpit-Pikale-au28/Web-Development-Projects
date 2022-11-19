@@ -29,10 +29,7 @@ function Getinfo() {
     navigator.geolocation.getCurrentPosition(async (data) => {
       let lat = data.coords.latitude.toFixed(2);
       let lon = data.coords.longitude.toFixed(2);
-      await axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
-        )
+      await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`)
         .then((response) => {
           // console.log(response)
           setdata(response.data);
@@ -48,50 +45,23 @@ function Getinfo() {
   console.log("data", data);
   return (
     <>
-      <center>
-        Please allow loaction to get your current loaction whether
-      </center>
+      <center> Please allow loaction to get your current loaction whether </center>
       <div className="container">
         <h2 style={{ color: "purple" }}>Get Wheather Infomation</h2>
-
-        <input
-          type="text"
-          className="form-control"
-          required
-          style={{ width: "300px", margin: "15px" }}
+        <input type="text" className="form-control" required style={{ width: "300px", margin: "15px" }} 
           placeholder="Enter a cityname"
           onChange={(event) => setcity(event.target.value)}
         />
-        <button type="button" onClick={fetchData} className="btn btn-primary">
-          <BsSearch/> Search
-        </button>
-      </div>{" "}
-      <br />
-      <div
-        className="container"
-        style={{
-          border: "2px solid black",
-          width: "600px",
-          background: "black",
-          color: "white",
-          opacity: "0.7",
-        }}
-      >
-        <h4>
-          <FaLocationArrow /> {data.name}
-        </h4>{" "}
-        <br />
-        <h5>
-          <BsFillCloudSunFill /> {data.weather[0].description}
-        </h5>{" "}
-        <br />
-        <h5>
-          <FaTemperatureLow /> {data.main.temp}°C
-        </h5>{" "}
-        <br />
+        <button type="button" onClick={fetchData} className="btn btn-primary"> <BsSearch /> Search </button>
+      </div><br/>
+
+      <div className="container" style={{ border: "2px solid black", width: "600px", background: "black", color: "white", opacity: "0.7",}}>
+        <h4> <FaLocationArrow /> {data.name} </h4> <br/>
+        <h5> <BsFillCloudSunFill /> {data.weather[0].description} </h5> <br />
+        <h5> <FaTemperatureLow /> {data.main.temp}°C </h5> <br/>
         <p>
-          Max <FaTemperatureLow /> : {data.main.temp_max}°C | Min{" "}
-          <FaTemperatureLow /> : {data.main.temp_max}°C
+          Max <FaTemperatureLow /> : {data.main.temp_max}°C |
+          Min <FaTemperatureLow /> : {data.main.temp_min}°C
         </p>
       </div>
     </>
