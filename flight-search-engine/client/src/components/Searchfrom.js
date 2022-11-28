@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import axios from 'axios'
 import '../App.css'
 
@@ -18,33 +18,13 @@ export default function Searchfrom() {
     .then((response) => {
       console.log(response);
       setData(response.data)
+      if(response.data)
       setoriginCity('')
       setdestinationCity('')
       setdepartureDate('')
     })
     .catch((error) => console.log(error));
   }
-   const getFlights = ()=> {
-       data.map((flight)=> {
-        const {id, name, price, originCity, destinationCity, departureDate, departureTime} = flight;
-        return (
-                <div id='flights' key={id}>
-                     <h3>Price &#x20b9; {price.toFixed(2)}</h3>
-                     <p> {name} </p>
-                     <p>origin {'>>'} {originCity}</p>
-                     <p>destination {'>>'} {destinationCity}</p>
-                     <p>departureDate {'>>'} {departureDate}</p>
-                     <p>departureTime {'>>'} {departureTime}</p>
-                </div>
-        )
-       })
-   }
-
-    useEffect(()=> {
-      if(data.length !== 0) {
-        getFlights()
-      }
-    }, [])
 
   return (
     <>
@@ -56,9 +36,25 @@ export default function Searchfrom() {
             <button type="submit" className="btn btn-primary" style={{width: "300px",  margin:"15px"}} >Submit</button>
         </form>
     </div>
-    <div id='getflights'>
-       <>{getFlights}</> 
-    </div>
-    </>
+      {data.map((flight)=> {
+           const {id, name, price, originCity, destinationCity, departureDate, departureTime} = flight;
+            return (
+              <div id='flights' key={id}>
+                    <h3>&#x20b9; {price.toFixed(2)}</h3>
+                    <h4>{originCity} {'<'}----------{'>'} {destinationCity}</h4>
+                    <h5>{departureDate}</h5>
+                    <h5>{departureTime}</h5>
+                    <div id='img'>
+                      <img src="https://images.cnbctv18.com/wp-content/uploads/2018/04/AIR-INDIA-REUTERS.jpg?im=FitAndFill,width=1200,height=900" alt={name}/>
+                      <h4> {name} </h4>
+                      </div>
+                    
+              </div>
+              )
+        })
+      }
+     
+  </>
+    
   )
 }

@@ -2,5 +2,22 @@
 #flights {
   width: 500px;
   border: 1px solid black;
-  margin: 30px;
+  position: relative;
+  position: relative;
+  left: 350px;
+  bottom: 228px;
+}
+
+#flights h3 {
+  color: #68B984;
+}
+
+#img img {
+  width: 200px;
+  height: 140px;
+}
+
+#img {
+  position: relative;
+  left: 200px;
 }
