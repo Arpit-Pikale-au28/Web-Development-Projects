@@ -4,7 +4,6 @@ const cors = require('cors')
 const path = require('path')
 const fs = require('fs')
 const jsonFile = require('./assignment-data.json');
-const { isTypedArray } = require('util/types')
 
 
 app.use(cors())
